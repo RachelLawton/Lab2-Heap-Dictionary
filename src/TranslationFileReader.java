@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Scanner;
 
 
@@ -30,10 +29,12 @@ public class TranslationFileReader {
 		while (dictionaryScanner.hasNextLine()) {
 			String wordPair = dictionaryScanner.nextLine().trim();// cleans up white space at the start
 			String[] wordPairs = wordPair.split(delims);// splits the weight from the term
+			//String replace = dictionary.replaceAll("�"," ");
 
 			// output word data to console.
 			if (wordPairs.length == 2) {
 				terms.put(wordPairs[0], wordPairs[1]);
+				System.out.println("Word one:" + wordPairs[0] + "Word two:" + wordPairs[1]);
 			} else {		
 				throw new IOException("Invalid line:" + lineNo);
 			}
