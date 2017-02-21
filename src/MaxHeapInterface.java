@@ -26,6 +26,8 @@ public interface MaxHeapInterface < T extends Comparable < ? super T >>
     
     /** Task: Removes all entries from the heap. */
     public void clear (); // done
+    
+    //public T getWord ();
 
     
 } // end MaxHeapInterface

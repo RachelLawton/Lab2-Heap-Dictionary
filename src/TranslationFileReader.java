@@ -34,7 +34,7 @@ public class TranslationFileReader {
 			// output word data to console.
 			if (wordPairs.length == 2) {
 				terms.put(wordPairs[0], wordPairs[1]);
-				System.out.println("Word one:" + wordPairs[0] + "Word two:" + wordPairs[1]);
+				//System.out.println("Word one:" + wordPairs[0] + "Word two:" + wordPairs[1]);
 			} else {		
 				throw new IOException("Invalid line:" + lineNo);
 			}

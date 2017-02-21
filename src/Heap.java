@@ -118,4 +118,6 @@ public class Heap<T extends Comparable<T>> implements MaxHeapInterface{
 	public void add(Comparable newEntry) {
 		insert((T) newEntry);
 	}
+
+	
 }

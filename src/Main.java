@@ -7,6 +7,8 @@ public class Main {
 	private Scanner input;
 	TranslationFileReader translator;
 	Heap<String> heap = new Heap<String>();
+	private String translation;
+	private boolean dictionary;
 
 	public static void main(String[] args) throws IOException{
 		Main app = new Main();
@@ -40,55 +42,39 @@ public class Main {
 			option = mainMenu();
 			switch (option)
 			{
-			case 1: runTranslatorSearch();
-			break;
+			case 1: runStringSearch();
+				break;
 			}
 		}while
-		       (option != 0);
+			(option != 0);
 	}
+	
+
+
 
 		
+		public void runStringSearch() throws IOException{
+			
+			if (dictionary != true);
+			{
+				translator = new TranslationFileReader();
+			}
+			
+
+			System.out.println("Please insert Spainish Word");
+			String result = input.nextLine();
+			result = input.nextLine();
+			System.out.println("English Word");
+			String s = input.nextLine();
+			System.out.println(translator.search(result));
+			
 		
-		private void runTranslatorSearch() throws IOException{
-		translator = new TranslationFileReader();
-		String translation = translator.search("");
-		
-		
-		for(int i = 0; i < heap.size(); i++)
-		{
-			System.out.println("Spainish word: ");// + translator.search(""));
-			System.out.println("English Word:  " + translation);
+			//String translation = translator.search("gracias");
 		}
-
-		
-
-		
-		
-		
-		
-		
-		
-		//System.out.println(translation);
-		System.out.println(translator.getWords().toString());
-		//	} catch (IOException e) {
-		// TODO Auto-generated catch block
-		//		e.printStackTrace();
-		//heap.add("Radhel");
-				//heap.add("Rachel");
-				//heap.add("Yasmin");
-				//heap.add("Zach");
-				//heap.add("David");
-				//heap.add("Yoda");
-				//heap.add("Daniel");
-				//heap.add("David");
-
-
-				//System.out.println(heap.getMax());
-				//System.out.println(heap.removeMax());
-				//System.out.println(heap.getMax());
-
-				//try {
-
 	}
-}
+
+
+
+
+
 
