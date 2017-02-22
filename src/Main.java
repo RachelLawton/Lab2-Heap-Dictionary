@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
@@ -7,8 +8,11 @@ public class Main {
 	private Scanner input;
 	TranslationFileReader translator;
 	Heap<String> heap = new Heap<String>();
+	HashMap <String, String> terms = new HashMap <String , String>();
 	private String translation;
 	private boolean dictionary;
+	private boolean insert;
+	private String add;
 
 	public static void main(String[] args) throws IOException{
 		Main app = new Main();
@@ -18,6 +22,8 @@ public class Main {
 	{
 		input = new Scanner(System.in);
 		heap = new Heap<String>();
+		terms = new HashMap <String , String>();
+
 		runMenu();
 	}
 
@@ -44,7 +50,10 @@ public class Main {
 			{
 			case 1: runStringSearch();
 				break;
+				
+			case 2: runInsert();
 			}
+			
 		}while
 			(option != 0);
 	}
@@ -67,10 +76,18 @@ public class Main {
 			System.out.println("English Word");
 			String s = input.nextLine();
 			System.out.println(translator.search(result));
-			
-		
-			//String translation = translator.search("gracias");
 		}
+		
+		public void runInsert(){
+			System.out.println("Please insert spainish word followed by tab then english word");
+			terms.put(input.next(), add);
+			String answer = input.nextLine();
+			//System.out.println(answer);
+			System.out.println(terms);
+			
+		}
+		
+		
 	}
 
 
