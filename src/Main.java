@@ -1,4 +1,6 @@
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -71,17 +73,20 @@ public class Main {
 			
 
 			System.out.println("Please insert Spainish Word");
-			String result = input.nextLine();
-			result = input.nextLine();
-			System.out.println("English Word");
-			String s = input.nextLine();
-			System.out.println(translator.search(result));
+			String spainish = input.nextLine();
+			spainish = input.nextLine();
+			
+			System.out.println(translator.search(spainish, spainish));
 		}
 		
-		public void runInsert(){
+		public void runInsert() throws IOException{
 			System.out.println("Please insert spainish word followed by tab then english word");
 			terms.put(input.next(), add);
 			String answer = input.nextLine();
+			PrintWriter out = new PrintWriter(new FileWriter("addedwords.txt"));
+			out.println(answer);
+			out.close();
+
 			//System.out.println(answer);
 			System.out.println(terms);
 			

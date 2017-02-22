@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class TranslationFileReader {
 
 
-	public HashMap <String, String> terms = new HashMap <String , String>();
+	public static HashMap <String, String> terms = new HashMap <String , String>();
 
 	public TranslationFileReader() throws IOException 
 	{
@@ -30,7 +30,8 @@ public class TranslationFileReader {
 			String wordPair = dictionaryScanner.nextLine().trim();// cleans up white space at the start
 			String[] wordPairs = wordPair.split(delims);// splits the weight from the term
 			//String replace = dictionary.replaceAll("�"," ");
-
+			String spainish = wordPairs[0];
+			String english = wordPairs[1];
 			// output word data to console.
 			if (wordPairs.length == 2) {
 				terms.put(wordPairs[0], wordPairs[1]);
@@ -43,10 +44,15 @@ public class TranslationFileReader {
 		dictionaryScanner.close();
 	}
 	
-	public String search(String s){
-		String result = terms.get(s);
-		return result;
+	public String search(String spainish, String english){
+		for (int i = 0; i < TranslationFileReader.terms.size(); i++) {//// loop over the length of terms
+			if (terms.equals(TranslationFileReader.terms.get(spainish))){//if the the term equals spainish then
+				return TranslationFileReader.terms.get(english);//return  english
+			}
+		}
+		return english;
 	}
+	
 	
 	public HashMap <String, String> getWords(){
 		return terms;
