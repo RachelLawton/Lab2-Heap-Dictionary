@@ -44,13 +44,8 @@ public class TranslationFileReader {
 		dictionaryScanner.close();
 	}
 	
-	public String search(String spainish, String english){
-		for (int i = 0; i < TranslationFileReader.terms.size(); i++) {//// loop over the length of terms
-			if (terms.equals(TranslationFileReader.terms.get(spainish))){//if the the term equals spainish then
-				return TranslationFileReader.terms.get(english);//return  english
-			}
-		}
-		return english;
+	public String search(String spanish){
+		return terms.get(spanish);
 	}
 	
 	
